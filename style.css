@@ -1,0 +1,28 @@
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-image: url(bg1.jpeg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: #8b4513;
+    height: 100vh;
+    overflow: auto;
+    color: aliceblue;
+}
+h1 {
+    font-size: 8vw;
+    text-align: center;
+    opacity: 0.6;
+}
+section {
+    margin: 30px;
+    position: absolute;
+    bottom: 300px;
+}
+.pilihan1 {
+    border :white 1px solid ;
+
+
+}

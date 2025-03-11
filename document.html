@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document - Angkatan 25 Scout</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Arial', sans-serif;
+    }
+
+    body {
+      background: linear-gradient(135deg, #1b5e20, #4caf50);
+      color: white;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    header {
+      width: 100%;
+      padding: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: rgba(0, 0, 0, 0.4);
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 1000;
+      backdrop-filter: blur(5px);
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+
+    .menu {
+      display: flex;
+      gap: 20px;
+    }
+
+    .menu a {
+      color: white;
+      text-decoration: none;
+      position: relative;
+    }
+
+    .menu a::after {
+      content: '';
+      width: 0%;
+      height: 2px;
+      background: white;
+      position: absolute;
+      left: 0;
+      bottom: -5px;
+      transition: width 0.3s ease;
+    }
+
+    .menu a:hover::after {
+      width: 100%;
+    }
+
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+      gap: 5px;
+    }
+
+    .hamburger div {
+      width: 25px;
+      height: 3px;
+      background: white;
+      transition: all 0.3s ease;
+    }
+
+    .content {
+      padding: 120px 20px 40px;
+    }
+
+    .content h1 {
+      text-align: center;
+      margin-bottom: 30px;
+      font-size: 2.5rem;
+    }
+
+    .document-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .document-item {
+      background: rgba(0, 0, 0, 0.4);
+      padding: 20px;
+      border-radius: 10px;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .document-item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+    }
+
+    .document-item h3 {
+      margin-bottom: 10px;
+      font-size: 1.3rem;
+    }
+
+    .document-item p {
+      font-size: 0.9rem;
+      margin-bottom: 20px;
+    }
+
+    .download-btn {
+      background: #ff9800;
+      padding: 10px;
+      border: none;
+      color: white;
+      font-weight: bold;
+      border-radius: 5px;
+      text-align: center;
+      text-decoration: none;
+      transition: background 0.3s ease;
+    }
+
+    .download-btn:hover {
+      background: #e68900;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .menu {
+        position: fixed;
+        top: 70px;
+        right: -100%;
+        flex-direction: column;
+        gap: 10px;
+        background: rgba(0, 0, 0, 0.9);
+        padding: 20px;
+        border-radius: 8px 0 0 8px;
+        transition: right 0.3s ease;
+      }
+
+      .menu.active {
+        right: 0;
+      }
+
+      .hamburger {
+        display: flex;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="logo">ANGKATAN 25 SCOUT</div>
+    <nav class="menu" id="menu">
+      <a href="#">Forum</a>
+      <a href="#">Document</a>
+      <a href="#">Gallery</a>
+      <a href="#">Notes</a>
+    </nav>
+    <div class="hamburger" id="hamburger">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </header>
+
+  <section class="content">
+    <h1>Daftar Dokumen</h1>
+    <div class="document-list">
+      
+      <!-- Document Item 1 -->
+      <div class="document-item">
+        <h3>laporan angkatan 25</h3>
+        <p>isi laporan:sangga tetap, materi per anggota, pasukan lkbb</p>
+        <a href="https://docs.google.com/document/d/1NA3HC6D5mXm5Sia-FRPiftlj15yudkmx/edit" target="_blank" class="download-btn">Unduh</a>
+      </div>
+      
+
+     
+      <!-- Tambah lagi sesuka hati -->
+    </div>
+  </section>
+
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    const menu = document.getElementById('menu');
+
+    hamburger.addEventListener('click', () => {
+      menu.classList.toggle('active');
+      hamburger.classList.toggle('open');
+    });
+  </script>
+
+</body>
+
+</html>
